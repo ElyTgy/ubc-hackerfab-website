@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,12 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom colors based on user specifications
+				ubc: {
+					blue: '#002145',
+					mint: '#F4FFF8',
+					slate: '#8BAAAD',
+				},
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+			fontFamily: {
+				aldrich: ['Aldrich', 'sans-serif'],
+				akatab: ['Akatab', 'sans-serif'],
+			},
+			backgroundImage: {
+				'circuit-pattern': "url('/images/circuit-pattern.svg')",
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +94,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': { opacity: '0', transform: 'translateY(20px)' },
+					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out forwards',
+				'fade-in-delay-1': 'fade-in 0.8s ease-out 0.2s forwards',
+				'fade-in-delay-2': 'fade-in 0.8s ease-out 0.4s forwards',
+				'fade-in-delay-3': 'fade-in 0.8s ease-out 0.6s forwards',
+				'pulse-slow': 'pulse-slow 4s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite'
 			}
 		}
 	},
