@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { CircuitIcon } from './icons/CircuitIcon';
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Cpu, Chip } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -16,60 +16,177 @@ const HeroSection: React.FC = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     
-    // Circuit animation
-    const particles: { x: number; y: number; radius: number; vx: number; vy: number; color: string }[] = [];
-    const connectionDistance = 150;
-    const particleCount = 70;
+    // Circuit board animation
+    const gridSize = 40;
+    const nodeSize = 2;
+    const nodeChance = 0.3;
+    const tracesPerNode = 2;
+    const traceLength = 6;
+    const speed = 0.25;
     
-    // Generate particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.5 + 0.5,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        color: Math.random() > 0.5 ? '#8BAAAD' : '#F4FFF8'
-      });
+    // Grid of nodes
+    interface Node {
+      x: number;
+      y: number;
+      traces: Trace[];
+      active: boolean;
+      pulseRadius: number;
+      pulseAlpha: number;
+      activationTime: number;
     }
+    
+    interface Trace {
+      dirX: number;
+      dirY: number;
+      progress: number;
+      active: boolean;
+      width: number;
+      color: string;
+      next: Node | null;
+    }
+    
+    // Create grid
+    const grid: Node[] = [];
+    for (let y = 0; y < Math.ceil(canvas.height / gridSize) + 1; y++) {
+      for (let x = 0; x < Math.ceil(canvas.width / gridSize) + 1; x++) {
+        if (Math.random() < nodeChance) {
+          grid.push({
+            x: x * gridSize,
+            y: y * gridSize,
+            traces: [],
+            active: false,
+            pulseRadius: 0,
+            pulseAlpha: 0,
+            activationTime: 0
+          });
+        }
+      }
+    }
+    
+    // Create traces
+    grid.forEach(node => {
+      for (let i = 0; i < Math.floor(Math.random() * tracesPerNode) + 1; i++) {
+        const dirs = [
+          { x: 1, y: 0 },
+          { x: 0, y: 1 },
+          { x: -1, y: 0 },
+          { x: 0, y: -1 }
+        ];
+        
+        // Pick a random direction
+        const dirIndex = Math.floor(Math.random() * dirs.length);
+        const dir = dirs[dirIndex];
+        
+        // Try to find next node in that direction
+        const targetX = node.x + dir.x * gridSize;
+        const targetY = node.y + dir.y * gridSize;
+        const nextNode = grid.find(n => n.x === targetX && n.y === targetY);
+        
+        node.traces.push({
+          dirX: dir.x,
+          dirY: dir.y,
+          progress: 0,
+          active: false,
+          width: Math.random() * 1 + 0.5,
+          color: Math.random() > 0.7 ? '#F4FFF8' : '#8BAAAD',
+          next: nextNode || null
+        });
+      }
+    });
+    
+    // Activate random nodes periodically
+    const activateRandomNode = () => {
+      const inactiveNodes = grid.filter(node => !node.active);
+      if (inactiveNodes.length > 0) {
+        const randomNode = inactiveNodes[Math.floor(Math.random() * inactiveNodes.length)];
+        randomNode.active = true;
+        randomNode.activationTime = performance.now();
+      }
+      
+      setTimeout(activateRandomNode, Math.random() * 500 + 500);
+    };
+    
+    // Start the activation loop
+    activateRandomNode();
     
     // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
-      // Update and draw particles
-      particles.forEach((particle, i) => {
-        // Move particles
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-        
-        // Draw particle
+      const currentTime = performance.now();
+      
+      // Draw nodes and traces
+      grid.forEach(node => {
+        // Draw node
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color;
+        ctx.arc(node.x, node.y, nodeSize, 0, Math.PI * 2);
+        ctx.fillStyle = node.active ? '#F4FFF8' : '#8BAAAD80';
         ctx.fill();
         
-        // Connect nearby particles with lines
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[j].x - particle.x;
-          const dy = particles[j].y - particle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+        // If node is active, create a pulse
+        if (node.active) {
+          // How long has this node been active
+          const timeSinceActivation = currentTime - node.activationTime;
           
-          if (distance < connectionDistance) {
+          // Pulse expands and fades
+          node.pulseRadius = Math.min(timeSinceActivation / 10, gridSize / 2);
+          node.pulseAlpha = Math.max(0, 1 - timeSinceActivation / 1000);
+          
+          // Draw pulse
+          if (node.pulseAlpha > 0) {
             ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(139, 170, 173, ${0.8 - distance / connectionDistance})`;
-            ctx.lineWidth = 0.4;
+            ctx.arc(node.x, node.y, node.pulseRadius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(244, 255, 248, ${node.pulseAlpha})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
+          
+          // Activate traces
+          node.traces.forEach(trace => {
+            if (!trace.active && Math.random() < 0.1) {
+              trace.active = true;
+              trace.progress = 0;
+            }
+          });
+          
+          // Deactivate node after some time
+          if (timeSinceActivation > 2000) {
+            node.active = false;
+          }
         }
+        
+        // Draw and update traces
+        node.traces.forEach(trace => {
+          if (trace.active) {
+            const startX = node.x;
+            const startY = node.y;
+            const currentLength = trace.progress * gridSize;
+            const endX = startX + trace.dirX * currentLength;
+            const endY = startY + trace.dirY * currentLength;
+            
+            // Draw trace
+            ctx.beginPath();
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(endX, endY);
+            ctx.strokeStyle = trace.color;
+            ctx.lineWidth = trace.width;
+            ctx.stroke();
+            
+            // Update trace progress
+            trace.progress += speed / 100;
+            
+            // If trace reaches end, activate next node
+            if (trace.progress >= 1) {
+              trace.active = false;
+              trace.progress = 0;
+              
+              if (trace.next) {
+                trace.next.active = true;
+                trace.next.activationTime = currentTime;
+              }
+            }
+          }
+        });
       });
       
       requestAnimationFrame(animate);
@@ -77,6 +194,7 @@ const HeroSection: React.FC = () => {
     
     animate();
     
+    // Handle window resize
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -91,7 +209,7 @@ const HeroSection: React.FC = () => {
   
   return (
     <section className="relative h-screen overflow-hidden flex items-center justify-center">
-      {/* Circuit animation background */}
+      {/* Circuit board animation background */}
       <canvas 
         ref={canvasRef} 
         className="absolute inset-0 z-0"
@@ -114,8 +232,13 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter glow text-transparent bg-clip-text bg-gradient-to-r from-ubc-mint via-ubc-slate/80 to-ubc-mint">
-              HACKER<span className="text-ubc-slate">FAB</span>
+            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter laser-etched text-transparent bg-clip-text bg-gradient-to-r from-ubc-mint via-ubc-slate/90 to-ubc-mint">
+              HACKER<span className="text-ubc-slate relative">
+                FAB
+                <span className="absolute -right-16 top-1/2 transform -translate-y-1/2">
+                  <Chip className="w-12 h-12 md:w-16 md:h-16 text-ubc-mint/70 animate-glow-pulse" strokeWidth={1} />
+                </span>
+              </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-ubc-mint/90 mt-6 ml-1 max-w-xl">
