@@ -232,7 +232,7 @@ const HeroSection: React.FC = () => {
               </div>
             </div>
             
-            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter laser-etched text-transparent bg-clip-text bg-gradient-to-r from-ubc-mint via-ubc-slate/90 to-ubc-mint">
+            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-ubc-mint">
               HACKER<span className="text-ubc-slate relative">
                 FAB
                 <span className="absolute -right-16 top-1/2 transform -translate-y-1/2">
@@ -302,3 +302,4 @@ const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+
