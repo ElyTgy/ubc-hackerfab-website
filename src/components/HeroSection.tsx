@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import { CircuitIcon } from './icons/CircuitIcon';
-import { ArrowDown, Cpu, Chip } from 'lucide-react';
+import { ArrowDown, Cpu, CircuitBoard } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -236,7 +236,7 @@ const HeroSection: React.FC = () => {
               HACKER<span className="text-ubc-slate relative">
                 FAB
                 <span className="absolute -right-16 top-1/2 transform -translate-y-1/2">
-                  <Chip className="w-12 h-12 md:w-16 md:h-16 text-ubc-mint/70 animate-glow-pulse" strokeWidth={1} />
+                  <CircuitBoard className="w-12 h-12 md:w-16 md:h-16 text-ubc-mint/70 animate-glow-pulse" strokeWidth={1} />
                 </span>
               </span>
             </h1>
