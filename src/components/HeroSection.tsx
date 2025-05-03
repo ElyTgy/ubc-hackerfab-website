@@ -225,21 +225,21 @@ const HeroSection: React.FC = () => {
           {/* Main title and logo */}
           <div className="md:col-span-8 text-left transform -rotate-3">
             <div className="flex items-center mb-4">
-              <CircuitIcon className="w-16 h-16 text-ubc-slate mr-4 animate-pulse-slow" />
+              <CircuitIcon className="w-12 h-12 md:w-16 md:h-16 text-ubc-slate mr-4 animate-pulse-slow" />
               <div className="flex flex-col">
-                <span className="text-sm md:text-base text-ubc-mint tracking-widest">UNIVERSITY OF BRITISH COLUMBIA</span>
+                <span className="text-xs md:text-base text-ubc-mint tracking-widest">UNIVERSITY OF BRITISH COLUMBIA'S</span>
                 <div className="h-0.5 w-full bg-ubc-slate/50"></div>
               </div>
             </div>
             
-            <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-ubc-mint">
+            <h1 className="text-5xl md:text-9xl font-bold tracking-tighter text-ubc-mint">
               HACKER<span className="text-ubc-slate relative">
                 FAB
                 
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-ubc-mint/90 mt-6 ml-1 max-w-xl">
+            <p className="text-lg md:text-2xl text-ubc-mint/90 mt-6 ml-1 max-w-xl">
             Student-run micro-fabrication lab making chips cheaper  <span className="relative inline-block">
             from scratch
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-ubc-slate"></span>

@@ -17,7 +17,7 @@ const CapabilitiesSection: React.FC = () => {
   const currentCapabilities: CapabilityItem[] = [
     {
       title: "Reflow Oven",
-      description: "Repurposing an old toaster oven for soldering our PCBs. Precise temperature curve control via PID.  Maskless UV Litho Stepper: Building on top of the TI DLP projector module to future cap thin film microelectrodes soft litho microfluidics",
+      description: "Repurposing an old toaster oven for soldering our PCBs. Precise temperature curve control via PID.",
       icon: "circuit"
     },
     {
@@ -207,7 +207,7 @@ const CapabilitiesSection: React.FC = () => {
   };
   
   return (
-    <section ref={containerRef} id="capabilities" className="py-32 bg-ubc-blue/80 relative overflow-hidden">
+    <section ref={containerRef} id="capabilities" className="pb-4 pt-20 bg-ubc-blue/80 relative overflow-hidden">
       {/* Parallax background elements */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="parallax-element absolute -left-32 -top-32 w-96 h-96 rounded-full bg-ubc-slate/5 blur-3xl"></div>

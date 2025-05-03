@@ -77,7 +77,7 @@ const MissionSection: React.FC = () => {
   
         <div className="mx-auto max-w-3xl">
           <p className="text-xl leading-relaxed text-ubc-mint/90">
-          We’re developing open-source microfabrication processes to build expensive and inaccessible hardware from scratch. The first step is to build up the equipments used for making chips. After that, we’re starting with the biomedical industry; synergizing with the established biotech ecosystem here in Vancouver. We aim to make it 10x cheaper to get labs access to tools like microfluidic cytometers and microelectrode arrays by using first principles manufacturing. Spin-off from <a href="https://hackerfab.ece.cmu.edu/" class="text-ubc">Hacker Fab</a> @ CMU.
+          We’re developing open-source microfabrication machines and processes to build conventionally expensive and inaccessible hardware from scratch. Our first downstream goal is to synergize with the established biotech ecosystem here in Vancouver. We aim to make it 10x cheaper to get labs access to tools like microfluidic cytometers and microelectrode arrays by using first principles manufacturing. In the long term, this would enable early-stage startups to bring life-changing biomedical solutions to market at cheaper costs. 
           </p>
         </div>
       </div>

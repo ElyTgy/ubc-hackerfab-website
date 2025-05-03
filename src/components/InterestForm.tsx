@@ -11,7 +11,7 @@ import { Send } from 'lucide-react';
 
 const InterestCTA: React.FC = () => {
   return (
-    <section id="interest" className="py-32 px-6 bg-transparent">
+    <section id="interest" className="pt-36 pb-40 px-6 bg-transparent">
       <div className="max-w-3xl mx-auto text-center">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ubc-mint">
