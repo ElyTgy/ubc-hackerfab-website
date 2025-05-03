@@ -235,15 +235,13 @@ const HeroSection: React.FC = () => {
             <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-ubc-mint">
               HACKER<span className="text-ubc-slate relative">
                 FAB
-                <span className="absolute -right-16 top-1/2 transform -translate-y-1/2">
-                  <CircuitBoard className="w-12 h-12 md:w-16 md:h-16 text-ubc-mint/70 animate-glow-pulse" strokeWidth={1} />
-                </span>
+                
               </span>
             </h1>
             
             <p className="text-xl md:text-2xl text-ubc-mint/90 mt-6 ml-1 max-w-xl">
-              Where hardware innovation meets <span className="relative inline-block">
-                electronic reality
+            Student-run micro-fabrication lab making chips cheaper  <span className="relative inline-block">
+            from scratch
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-ubc-slate"></span>
               </span>
             </p>

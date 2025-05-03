@@ -84,15 +84,15 @@ const Footer: React.FC = () => {
               </a>
               <a href="#capabilities" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
                 <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
-                Capabilities
+                Projects
+              </a>
+              <a href="#sponsors" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
+                <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
+                Sponsors
               </a>
               <a href="#interest" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
                 <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
                 Join Us
-              </a>
-              <a href="#" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
-                <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
-                Privacy Policy
               </a>
             </div>
           </div>

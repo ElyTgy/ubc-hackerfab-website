@@ -16,48 +16,33 @@ const CapabilitiesSection: React.FC = () => {
   // Current capabilities
   const currentCapabilities: CapabilityItem[] = [
     {
-      title: "PCB Design & Fabrication",
-      description: "Industry-standard PCB design software access, prototyping equipment, two-layer board capability.",
+      title: "Reflow Oven",
+      description: "Repurposing an old toaster oven for soldering our PCBs. Precise temperature curve control via PID.  Maskless UV Litho Stepper: Building on top of the TI DLP projector module to future cap thin film microelectrodes soft litho microfluidics",
       icon: "circuit"
     },
     {
-      title: "Component Assembly",
-      description: "Soldering stations, hot air rework stations, component inventory, precision tools.",
+      title: "Maskless UV Lithostepper",
+      description: "Building on top of the TI DLP projector module to achieve ~10 micron feature sizes.",
       icon: "assembly"
-    },
-    {
-      title: "Testing & Debugging",
-      description: "Digital oscilloscopes, power supplies, multimeters, logic analyzers for thorough testing.",
-      icon: "testing"
-    },
-    {
-      title: "Workshops & Support",
-      description: "Regular skill-building workshops, technical mentorship, project consultation and events.",
-      icon: "workshop"
     }
   ];
   
   // Future capabilities
   const futureCapabilities: CapabilityItem[] = [
     {
-      title: "Advanced Manufacturing",
-      description: "Pick and place machine, reflow oven, multi-layer PCB fabrication, automated testing.",
-      icon: "manufacturing"
-    },
-    {
-      title: "Specialized Equipment",
-      description: "RF testing chamber, environmental testing, high-performance computing for simulations.",
+      title: "Thin Film Microelectrodes",
+      description: "Making devices used for recording electrical signals of cells using simple 4 layer polymide and metal microelectrodes.",
       icon: "equipment"
     },
     {
-      title: "Integration Facilities",
-      description: "3D printing for enclosures, CNC machining, laser cutting, full product development.",
+      title: "Soft Litho Microfluidics",
+      description: "Making chips that can precisely control the flow of fluids in sub ~20 micron channel widths.",
       icon: "integration"
     },
     {
-      title: "Expanded Programs",
-      description: "Industry partnerships, research collaborations, start-up incubation, certification courses.",
-      icon: "programs"
+      title: "Flow cytometry",
+      description: "Using a laser to detect and sort cells based on their size and fluorescence. To be made with the help of our in-house soft-litho capabilities.",
+      icon: "cyto"
     }
   ];
 
@@ -131,6 +116,14 @@ const CapabilitiesSection: React.FC = () => {
             <div className="absolute top-[10px] right-[10px] w-1 h-1 bg-ubc-slate rounded-full"></div>
             <div className="absolute bottom-[10px] left-[10px] w-1 h-1 bg-ubc-slate rounded-full"></div>
           </div>
+        );
+      case "cyto":
+        return(
+        <img
+          src="/images/cyto.svg"      // path is relative to /public
+          alt=""
+          className="w-12 h-12"            // Tailwind sizing
+        />
         );
       case "assembly":
         return (
@@ -236,11 +229,11 @@ const CapabilitiesSection: React.FC = () => {
           {/* Section title with creative styling */}
           <div className="flex flex-col items-center">
             <div className="inline-block relative">
-              <h2 className="text-4xl md:text-6xl font-bold text-ubc-mint mb-2">Our Capabilities</h2>
+              <h2 className="text-4xl md:text-6xl font-bold text-ubc-mint mb-2">Our Projects</h2>
               <div className="absolute -left-4 -right-4 h-[1px] bottom-0 bg-gradient-to-r from-transparent via-ubc-slate to-transparent"></div>
             </div>
             <p className="text-xl text-ubc-mint/80 max-w-2xl text-center mt-6">
-              Explore what HackerFab UBC can offer now and what we're building for the future
+              What we are building now and what we plan to build in the future.
             </p>
           </div>
           
@@ -260,7 +253,7 @@ const CapabilitiesSection: React.FC = () => {
                       : "text-ubc-mint/70 hover:text-ubc-mint"
                   }`}
                 >
-                  Current Capabilities
+                  Current Projects
                 </TabsTrigger>
                 <TabsTrigger
                   value="future"
@@ -270,7 +263,7 @@ const CapabilitiesSection: React.FC = () => {
                       : "text-ubc-mint/70 hover:text-ubc-mint"
                   }`}
                 >
-                  Future Capabilities
+                  Future Projects
                 </TabsTrigger>
               </TabsList>
             </div>
