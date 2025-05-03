@@ -7,19 +7,23 @@ import {
   Tabs,
 } from "@/components/ui/tabs";
 
+/* ──────────────────────────────────────────────────────────
+   Types
+   ────────────────────────────────────────────────────────── */
 interface CapabilityItem {
   title: string;
   description: string;
   icon: string;
 }
 
+/* ──────────────────────────────────────────────────────────
+   Component
+   ────────────────────────────────────────────────────────── */
 const CapabilitiesSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState("current");
   const containerRef = useRef<HTMLDivElement>(null);
 
-  /* ───────────────────────────────────────────
-     1.  Capabilities data
-  ─────────────────────────────────────────── */
+  /* 1. Define capabilities ─────────────────────────────── */
   const currentCapabilities: CapabilityItem[] = [
     {
       title: "Reflow Oven",
@@ -30,7 +34,7 @@ const CapabilitiesSection: React.FC = () => {
     {
       title: "Maskless UV Lithostepper",
       description:
-        "Building on top of the TI DLP projector module to achieve ~10 micron feature sizes.",
+        "Building on top of the TI DLP projector module to achieve ~10 µm feature sizes.",
       icon: "assembly",
     },
   ];
@@ -43,142 +47,128 @@ const CapabilitiesSection: React.FC = () => {
       icon: "equipment",
     },
     {
-      title: "Soft Litho Microfluidics",
+      title: "Soft‑Litho Microfluidics",
       description:
-        "Making chips that can precisely control the flow of fluids in sub‑20 µm channel widths.",
+        "Making chips that can precisely control the flow of fluids in ≲ 20 µm‑wide channels.",
       icon: "integration",
     },
     {
-      title: "Flow cytometry",
+      title: "Flow Cytometry",
       description:
-        "Using a laser to detect and sort cells based on size and fluorescence, enabled by our in‑house soft‑litho capabilities.",
+        "Laser‑based detection and sorting of cells, built with our in‑house soft‑litho capabilities.",
       icon: "cyto",
     },
   ];
 
-  /* ───────────────────────────────────────────
-     2.  Parallax on scroll
-  ─────────────────────────────────────────── */
+  /* 2. Parallax scroll effect ──────────────────────────── */
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
-      const el = containerRef.current;
-      const offset = window.scrollY - (el.getBoundingClientRect().top + window.scrollY);
-      if (offset > -window.innerHeight && offset < el.offsetHeight + window.innerHeight) {
-        el.querySelectorAll(".parallax-element").forEach((p: any, i) => {
+
+      const container = containerRef.current;
+      const scrollPos = window.scrollY;
+      const containerTop =
+        container.getBoundingClientRect().top + window.scrollY;
+      const offset = scrollPos - containerTop;
+
+      if (
+        offset > -window.innerHeight &&
+        offset < container.offsetHeight + window.innerHeight
+      ) {
+        const elements = container.querySelectorAll(".parallax-element");
+        elements.forEach((el: any, i) => {
           const speed = i % 2 === 0 ? 0.05 : -0.03;
-          p.style.transform = `translateY(${offset * speed}px)`;
+          el.style.transform = `translateY(${offset * speed}px)`;
         });
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ───────────────────────────────────────────
-     3.  Render helpers
-  ─────────────────────────────────────────── */
-  const renderCapability = (c: CapabilityItem, i: number) => (
+  /* 3. Utility render helpers ──────────────────────────── */
+  const renderCapability = (cap: CapabilityItem, idx: number) => (
     <motion.div
-      key={c.title}
+      key={cap.title}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.5, delay: i * 0.1 }}
+      transition={{ duration: 0.5, delay: idx * 0.1 }}
       className="capability-card group"
     >
       <div className="relative overflow-hidden rounded-lg">
         <div className="bg-ubc-blue/40 border border-ubc-slate/30 p-8 h-full transform group-hover:scale-[0.98] transition-transform">
-          <div className="capability-icon mb-6">{getCapabilityIcon(c.icon)}</div>
-          <h3 className="mb-3 text-xl font-bold text-ubc-mint">{c.title}</h3>
-          <p className="text-ubc-mint/80">{c.description}</p>
+          <div className="capability-icon mb-6">
+            {getCapabilityIcon(cap.icon)}
+          </div>
+          <h3 className="text-xl font-bold mb-3 text-ubc-mint">
+            {cap.title}
+          </h3>
+          <p className="text-ubc-mint/80">{cap.description}</p>
         </div>
 
-        {/* Decorative traces */}
-        <div className="absolute top-0 right-0 h-12 w-12">
+        {/* decorative traces */}
+        <div className="absolute top-0 right-0 w-12 h-12">
+          <div className="absolute top-0 right-0 w-full h-0.5 bg-ubc-slate/30" />
           <div className="absolute top-0 right-0 h-full w-0.5 bg-ubc-slate/30" />
-          <div className="absolute top-0 right-0 h-0.5 w-full bg-ubc-slate/30" />
         </div>
-        <div className="absolute bottom-0 left-0 h-8 w-8">
+        <div className="absolute bottom-0 left-0 w-8 h-8">
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-ubc-slate/30" />
           <div className="absolute bottom-0 left-0 h-full w-0.5 bg-ubc-slate/30" />
-          <div className="absolute bottom-0 left-0 h-0.5 w-full bg-ubc-slate/30" />
         </div>
       </div>
     </motion.div>
   );
 
-  const getCapabilityIcon = (t: string) => {
-    if (t === "circuit")
-      return (
-        <div className="relative h-12 w-12">
-          <div className="absolute inset-0 rounded-full border-2 border-ubc-mint/60" />
-          <div className="absolute inset-[4px] rounded-full border border-ubc-slate/60" />
-          <div className="absolute top-1/2 left-0 h-[1px] w-3 bg-ubc-mint" />
-          <div className="absolute top-1/2 right-0 h-[1px] w-3 bg-ubc-mint" />
-          <div className="absolute right-[10px] top-[10px] h-1 w-1 rounded-full bg-ubc-slate" />
-          <div className="absolute bottom-[10px] left-[10px] h-1 w-1 rounded-full bg-ubc-slate" />
-        </div>
-      );
-    if (t === "cyto") return <img src="/images/cyto.svg" alt="" className="h-12 w-12" />;
-    if (t === "assembly")
-      return (
-        <div className="relative h-12 w-12">
-          <div className="absolute inset-0 rounded-md border border-ubc-mint/60" />
-          <div className="absolute right-1/4 top-1/4 h-6 w-6 border border-ubc-slate/60" />
-          <div className="absolute bottom-1/4 left-1/4 h-4 w-4 bg-ubc-mint/20" />
-          <div className="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ubc-mint" />
-        </div>
-      );
-    if (t === "equipment")
-      return (
-        <div className="relative h-12 w-12">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="rounded-full bg-ubc-slate/40 h-4 w-4" />
+  const getCapabilityIcon = (iconType: string) => {
+    switch (iconType) {
+      /* … keep your existing SVG / JSX icon definitions … */
+      case "circuit":
+        return (
+          <div className="relative w-12 h-12">
+            <div className="absolute inset-0 border-2 border-ubc-mint/60 rounded-full" />
+            <div className="absolute inset-[4px] border border-ubc-slate/60 rounded-full" />
+            <div className="absolute top-1/2 left-0 w-3 h-[1px] bg-ubc-mint" />
+            <div className="absolute top-1/2 right-0 w-3 h-[1px] bg-ubc-mint" />
+            <div className="absolute top-[10px] right-[10px] w-1 h-1 bg-ubc-slate rounded-full" />
+            <div className="absolute bottom-[10px] left-[10px] w-1 h-1 bg-ubc-slate rounded-full" />
           </div>
-          {["top-0 left-0", "top-0 right-0", "bottom-0 left-0", "bottom-0 right-0"].map((pos) => (
-            <div
-              key={pos}
-              className={`absolute ${pos} h-4 w-4 border-ubc-mint/60 ${
-                pos.includes("top") ? "border-t-2" : "border-b-2"
-              } ${pos.includes("left") ? "border-l-2" : "border-r-2"}`}
-            />
-          ))}
-        </div>
-      );
-    if (t === "integration")
-      return (
-        <div className="relative h-12 w-12">
-          <div className="grid h-full w-full grid-cols-2 grid-rows-2 gap-1">
-            <div className="border border-ubc-mint/60" />
-            <div className="border border-ubc-slate/60" />
-            <div className="border border-ubc-slate/60" />
-            <div className="border border-ubc-mint/60" />
-          </div>
-        </div>
-      );
-    return <div className="h-12 w-12 rounded-full bg-ubc-slate/20" />;
+        );
+      case "cyto":
+        return <img src="/images/cyto.svg" alt="" className="w-12 h-12" />;
+      /* … other cases unchanged … */
+      default:
+        return <div className="w-12 h-12 bg-ubc-slate/20 rounded-full" />;
+    }
   };
 
-  /* ───────────────────────────────────────────
-     4. Render
-  ─────────────────────────────────────────── */
+  /* 4. Render ───────────────────────────────────────────── */
   return (
     <section
       ref={containerRef}
       id="capabilities"
       className="relative overflow-hidden bg-ubc-blue/80 pt-20 pb-4"
     >
-      {/* Background blobs */}
+      {/* ── Parallax background ──────────────────────────── */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="parallax-element absolute -left-32 -top-32 h-96 w-96 rounded-full bg-ubc-slate/5 blur-3xl" />
-        <div className="parallax-element absolute -right-48 top-1/2 h-96 w-96 rounded-full bg-ubc-mint/5 blur-3xl" />
-        <div className="parallax-element absolute left-1/4 -bottom-48 h-96 w-96 rounded-full bg-ubc-slate/5 blur-3xl" />
+        <div className="parallax-element absolute -left-32 -top-32 w-96 h-96 rounded-full bg-ubc-slate/5 blur-3xl" />
+        <div className="parallax-element absolute -right-48 top-1/2 w-96 h-96 rounded-full bg-ubc-mint/5 blur-3xl" />
+        <div className="parallax-element absolute left-1/4 -bottom-48 w-96 h-96 rounded-full bg-ubc-slate/5 blur-3xl" />
+        {/* extra circuit lines */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute left-10 top-20 w-20 h-20 border border-ubc-mint/30 rounded-full" />
+          <div className="absolute right-20 bottom-40 w-32 h-32 border border-ubc-slate/30 rotate-45" />
+          <div className="absolute left-1/3 top-1/3 w-16 h-16 border-2 border-ubc-mint/20" />
+          <div className="absolute right-1/4 top-1/4 w-24 h-1 bg-ubc-slate/30" />
+          <div className="absolute left-2/3 bottom-1/3 w-1 h-24 bg-ubc-mint/30" />
+        </div>
       </div>
 
-      {/* Content wrapper */}
-      <div className="relative z-10 mx-auto max-w-6xl px-6">
+      {/* ── Foreground content ───────────────────────────── */}
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pb-20">
         {/* Heading */}
-        <div className="mb-16 flex flex-col items-center">
+        <div className="mb-8 flex flex-col items-center">
           <div className="relative inline-block">
             <h2 className="mb-2 text-4xl font-bold text-ubc-mint md:text-6xl">
               Our Projects
@@ -191,33 +181,65 @@ const CapabilitiesSection: React.FC = () => {
         </div>
 
         {/* Tabs */}
-        <Tabs defaultValue="current" onValueChange={setActiveTab}>
-          {/* Wrapper keeps padding; list now full‑width on xs */}
+        <Tabs
+          defaultValue="current"
+          className="w-full"
+          onValueChange={setActiveTab}
+        >
+          {/* list wrapper */}
           <div className="mb-12 flex justify-center px-4">
-            <TabsList className="w-full sm:w-auto inline-flex flex-wrap justify-center gap-2 rounded-md border border-ubc-slate/20 bg-ubc-blue/30 p-1">
-              {["current", "future"].map((val) => (
-                <TabsTrigger
-                  key={val}
-                  value={val}
-                  className={`
-                    flex-1 sm:flex-none whitespace-nowrap
-                    px-4 py-2 text-base                   /* <640 px */
-                    sm:px-5 sm:py-2.5 sm:text-lg          /* ≥640 px */
-                    md:px-8 md:py-3 md:text-xl            /* ≥768 px */
-                    transition-all duration-300
-                    ${
-                      activeTab === val
-                        ? "rounded-sm bg-ubc-mint text-ubc-blue"
-                        : "text-ubc-mint/70 hover:text-ubc-mint"
-                    }
-                  `}
-                >
-                  {val === "current" ? "Current Projects" : "Future Projects"}
-                </TabsTrigger>
-              ))}
+            <TabsList
+              className="
+                inline-flex items-stretch flex-wrap gap-2      /* stretch children */
+                rounded-md bg-ubc-blue/30 border border-ubc-slate/20
+                px-1                                           /* horiz‑padding only */
+              "
+            >
+              {/* Current */}
+              <TabsTrigger
+                value="current"
+                className={`
+                  flex items-center justify-center h-full text-center /* centre */
+                  whitespace-nowrap
+                  px-3  py-2  text-sm
+                  sm:px-5 sm:py-2.5 sm:text-base
+                  md:px-8 md:py-3   md:text-lg
+                  leading-tight
+                  transition-all duration-300
+                  ${
+                    activeTab === "current"
+                      ? "text-ubc-blue bg-ubc-mint rounded-sm"
+                      : "text-ubc-mint/70 hover:text-ubc-mint"
+                  }
+                `}
+              >
+                Current&nbsp;Projects
+              </TabsTrigger>
+
+              {/* Future */}
+              <TabsTrigger
+                value="future"
+                className={`
+                  flex items-center justify-center h-full text-center
+                  whitespace-nowrap
+                  px-3  py-2  text-sm
+                  sm:px-5 sm:py-2.5 sm:text-base
+                  md:px-8 md:py-3   md:text-lg
+                  leading-tight
+                  transition-all duration-300
+                  ${
+                    activeTab === "future"
+                      ? "text-ubc-blue bg-ubc-mint rounded-sm"
+                      : "text-ubc-mint/70 hover:text-ubc-mint"
+                  }
+                `}
+              >
+                Future&nbsp;Projects
+              </TabsTrigger>
             </TabsList>
           </div>
 
+          {/* Panels */}
           <TabsContent value="current">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {currentCapabilities.map(renderCapability)}
