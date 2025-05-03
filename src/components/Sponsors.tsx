@@ -120,7 +120,7 @@ const SponsorSection: React.FC = () => {
       <div className="max-w-6xl mx-auto relative z-10" ref={sectionRef}>
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-3 text-ubc-mint inline-block relative">
-            Our Sponsors
+            Supported by
             <div className="absolute left-0 right-0 h-px bottom-0 bg-ubc-slate" />
           </h2>
         </div>

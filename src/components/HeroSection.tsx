@@ -291,7 +291,7 @@ const HeroSection: React.FC = () => {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div className="absolute bottom-10 inset-x-0 flex flex-col items-center justify-center animate-bounce">
         <ArrowDown className="w-6 h-6 text-ubc-mint/70" />
         <span className="text-xs text-ubc-mint/50 mt-2 tracking-widest">SCROLL</span>
       </div>
