@@ -123,7 +123,6 @@ const CapabilitiesSection: React.FC = () => {
 
   const getCapabilityIcon = (iconType: string) => {
     switch (iconType) {
-      /* … keep your existing SVG / JSX icon definitions … */
       case "circuit":
         return (
           <div className="relative w-12 h-12">
@@ -137,7 +136,94 @@ const CapabilitiesSection: React.FC = () => {
         );
       case "cyto":
         return <img src="/images/cyto.svg" alt="" className="w-12 h-12" />;
-      /* … other cases unchanged … */
+      case "assembly":
+        return (
+          <div className="relative w-12 h-12">
+            <div className="absolute inset-0 border border-ubc-mint/60 rounded-md" />
+            <div className="absolute top-1/4 right-1/4 w-6 h-6 border border-ubc-slate/60" />
+            <div className="absolute bottom-1/4 left-1/4 w-4 h-4 bg-ubc-mint/20" />
+            <div className="absolute top-1/2 left-1/2 w-1 h-1 bg-ubc-mint rounded-full -translate-x-1/2 -translate-y-1/2" />
+          </div>
+        );
+      case "testing":
+        return (
+          <svg
+            viewBox="0 0 24 24"
+            className="w-12 h-12 text-ubc-slate"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
+            <path d="M2 3h20v4H2zM4 7v10M20 7v10M2 17h20v4H2z" />
+            <path d="M9 11h6M9 14h6" strokeWidth="1" />
+          </svg>
+        );
+      case "workshop":
+        return (
+          <div className="relative w-12 h-12">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 border border-ubc-mint/60 rotate-45" />
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-5 h-5 bg-ubc-slate/20 -rotate-12" />
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-2 h-2 bg-ubc-mint rounded-full" />
+            </div>
+          </div>
+        );
+      case "manufacturing":
+        return (
+          <svg
+            viewBox="0 0 24 24"
+            className="w-12 h-12 text-ubc-slate"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
+            <rect x="2" y="2" width="20" height="8" rx="1" />
+            <rect x="2" y="14" width="20" height="8" rx="1" />
+            <path d="M6 6h.01M6 18h.01M12 6h6M12 18h6" strokeWidth="1.5" />
+          </svg>
+        );
+      case "equipment":
+        return (
+          <div className="relative w-12 h-12">
+            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ubc-mint/60" />
+            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-ubc-mint/60" />
+            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-ubc-mint/60" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ubc-mint/60" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-4 h-4 bg-ubc-slate/40 rounded-full" />
+            </div>
+          </div>
+        );
+      case "integration":
+        return (
+          <div className="relative w-12 h-12">
+            <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-1">
+              <div className="border border-ubc-mint/60" />
+              <div className="border border-ubc-slate/60" />
+              <div className="border border-ubc-slate/60" />
+              <div className="border border-ubc-mint/60" />
+            </div>
+          </div>
+        );
+      case "programs":
+        return (
+          <svg
+            viewBox="0 0 24 24"
+            className="w-12 h-12 text-ubc-mint"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        );
       default:
         return <div className="w-12 h-12 bg-ubc-slate/20 rounded-full" />;
     }
