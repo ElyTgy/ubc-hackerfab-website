@@ -37,9 +37,7 @@ const Footer: React.FC = () => {
             </div>
             
             <p className="text-ubc-mint/70 text-sm">
-              HackerFab UBC is an open-access electronics fabrication facility 
-              designed to democratize hardware development and foster innovation
-              across disciplines.
+            Student-run micro-fabrication lab making chips cheaper from scratch
             </p>
           </div>
           
