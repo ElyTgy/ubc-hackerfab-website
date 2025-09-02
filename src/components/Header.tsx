@@ -10,9 +10,9 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-ubc-blue/95 backdrop-blur-sm border-b border-ubc-slate/20">
       <div className="max-w-7xl mx-auto px-6 py-4">
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-center md:justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-ubc-mint hover:text-white transition-colors">
+          <Link to="/" className="hidden md:flex items-center gap-2 text-ubc-mint hover:text-white transition-colors">
             <span className="font-aldrich text-lg">HackerFab UBC</span>
           </Link>
           
