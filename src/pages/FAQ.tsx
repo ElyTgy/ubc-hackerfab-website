@@ -42,6 +42,9 @@ const FAQ = () => {
           <h1 className="text-5xl md:text-6xl font-aldrich mb-6 text-ubc-mint glow">
             FAQ
           </h1>
+          <p className="text-ubc-mint/80 text-lg">
+            If you have more questions, you can reach us at contact@ubcfab.com
+          </p>
         </div>
       </section>
 
