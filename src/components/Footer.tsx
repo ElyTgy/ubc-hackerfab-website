@@ -4,7 +4,7 @@ import { CircuitIcon } from './icons/CircuitIcon';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative overflow-hidden py-16 px-6 border-t border-ubc-slate/20">
+    <footer className="relative overflow-hidden py-16 px-6 border-t border-ubc-slate/20 bg-ubc-blue">
       {/* Circuit board pattern background */}
       <div className="absolute inset-0 circuit-traces opacity-5">
         <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
