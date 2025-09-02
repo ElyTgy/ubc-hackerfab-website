@@ -94,7 +94,7 @@ const SponsorSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="sponsors" className="pt-32 pb-16 px-6 relative overflow-hidden">
+    <section id="sponsors" className="pt-32 pb-12 px-6 relative overflow-hidden">
       {/* Decorative background (unchanged) */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-full h-full">
