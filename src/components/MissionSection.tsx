@@ -133,7 +133,7 @@ const MissionSection: React.FC = () => {
         </button>
   
         {/* dot indicators */}
-        <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex space-x-2">
           {images.map((_, i) => (
             <button
               key={i}
