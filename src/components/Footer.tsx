@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
       
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:place-items-center">
-          {/* Left column: Logo and info */}
-          <div className="space-y-6">
+          {/* Left column: Logo and info - hidden on mobile */}
+          <div className="space-y-6 hidden md:block">
             <div className="flex items-center mb-4">
               <div className="relative">
                 <CircuitIcon className="w-12 h-12 text-ubc-slate" />
@@ -41,35 +41,31 @@ const Footer: React.FC = () => {
             </p>
           </div>
           
-          {/* Middle column: Quick links */}
-          <div>
+          {/* Middle column: Quick links - centered on mobile */}
+          <div className="text-center md:text-left">
             <h3 className="text-ubc-mint text-lg font-bold mb-6 relative inline-block">
               Quick Links
               <span className="absolute bottom-0 left-0 w-full h-px bg-ubc-slate/40"></span>
             </h3>
             
             <div className="grid grid-cols-1 gap-3">
-              <a href="#mission" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
+              <a href="/" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group justify-center md:justify-start">
                 <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
-                Our Mission
+                Home
               </a>
-              <a href="#capabilities" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
+              <a href="/teams" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group justify-center md:justify-start">
                 <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
-                Projects
+                Teams
               </a>
-              <a href="#sponsors" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
+              <a href="#interest" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group justify-center md:justify-start">
                 <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
-                Sponsors
-              </a>
-              <a href="#interest" className="text-ubc-mint/70 hover:text-ubc-mint transition-colors inline-flex items-center group">
-                <span className="w-1 h-1 bg-ubc-slate mr-2 group-hover:bg-ubc-mint transition-colors"></span>
-                Join Us
+                Apply
               </a>
             </div>
           </div>
           
-          {/* Right column: Contact */}
-          <div>
+          {/* Right column: Contact - hidden on mobile */}
+          <div className="hidden md:block">
             <h3 className="text-ubc-mint text-lg font-bold mb-6 relative inline-block">
               Contact Info
               <span className="absolute bottom-0 left-0 w-full h-px bg-ubc-slate/40"></span>
