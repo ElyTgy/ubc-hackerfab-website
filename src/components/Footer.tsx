@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-16 pt-6 border-t border-ubc-slate/20 flex flex-col md:flex-row justify-between items-center text-ubc-mint/50 text-xs">
+        <div className="mt-8 pt-6 border-t border-ubc-slate/20 flex flex-col md:flex-row justify-between items-center text-ubc-mint/50 text-xs">
           <p>&copy; {new Date().getFullYear()} HackerFab UBC. All rights reserved.</p>
           <p className="mt-2 md:mt-0">
             University of British Columbia | 
