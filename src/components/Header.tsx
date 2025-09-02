@@ -13,7 +13,7 @@ const Header = () => {
         <nav className="flex items-center justify-center md:justify-between">
           {/* Logo */}
           <Link to="/" className="hidden md:flex items-center gap-2 text-ubc-mint hover:text-white transition-colors">
-            <span className="font-aldrich text-lg">HackerFab UBC</span>
+            <span className="font-aldrich text-lg">HackerFab</span>
           </Link>
           
           {/* Navigation Links */}
@@ -39,7 +39,7 @@ const Header = () => {
               Teams
             </Link>
             <a 
-              href="https://app.youform.com/forms/h4pdrz0s" 
+              href="https://app.youform.com/forms/mevgeqbt" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-ubc-slate hover:bg-ubc-slate/90 text-ubc-blue font-medium px-4 py-2 rounded-md transition-colors"

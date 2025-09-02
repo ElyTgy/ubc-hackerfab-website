@@ -20,12 +20,12 @@ const InterestCTA: React.FC = () => {
 
         {/* Short description */}
         <p className="text-xl text-ubc-mint/80 mb-10">
-          We are still in early stages, so there is no formal application process. Fill out this form and tell us about yourself, and we'll get back to you!
+          We want a few smart and dedicated people to help us build all the tools for semiconductor fabritcation and build chips with them. Based on this quick interest form and your responses, we will reach out to you with the next steps. This shouldn't take more than 10 minutes.
         </p>
 
         {/* CTA button – update the href with your live Google Form link */}
         <a
-          href="https://app.youform.com/forms/h4pdrz0s" // ← replace this
+          href="https://app.youform.com/forms/mevgeqbt" // ← replace this
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block"

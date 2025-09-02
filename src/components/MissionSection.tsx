@@ -2,11 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const images = [
-  '/images/1.jpeg',
+  '/images/1.png',
   '/images/2.png',
   '/images/3.jpeg',
   '/images/4.jpeg',
   '/images/5.jpeg',
+  '/images/6.png',
 ];
 
 const MissionSection: React.FC = () => {
