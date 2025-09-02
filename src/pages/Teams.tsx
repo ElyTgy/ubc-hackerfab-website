@@ -1,6 +1,7 @@
 import React from 'react';
 import { Cpu, Zap, Code, Wrench, Users, Target } from 'lucide-react';
 import InterestForm from '@/components/InterestForm';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 const Teams = () => {
@@ -104,6 +105,9 @@ const Teams = () => {
 
       {/* Interest Form */}
       <InterestForm />
+      
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
