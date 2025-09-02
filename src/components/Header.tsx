@@ -13,7 +13,6 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-ubc-mint hover:text-white transition-colors">
-            <CircuitBoard className="w-6 h-6" />
             <span className="font-aldrich text-lg">HackerFab UBC</span>
           </Link>
           
