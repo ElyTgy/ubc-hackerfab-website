@@ -54,7 +54,7 @@ const Teams = () => {
           <h1 className="text-5xl md:text-6xl font-aldrich mb-6 text-ubc-mint glow">
             Join Our Teams
           </h1>
-          <p className="text-xl text-ubc-mint/80 max-w-2xl mx-auto">
+          <p className="text-base md:text-xl text-ubc-mint/80 max-w-2xl mx-auto">
             We're looking for passionate students to help us grow our team. Since the team will be small, you will pretty much have control over what you want to work on in your team, including topics across mechanical or electrical engineering, physics, and software. Interested in helping us build chips from scratch? Look at the teams below.
           </p>
         </div>

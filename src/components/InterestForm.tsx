@@ -19,7 +19,7 @@ const InterestCTA: React.FC = () => {
         </h2>
 
         {/* Short description */}
-        <p className="text-xl text-ubc-mint/80 mb-10">
+        <p className="text-base md:text-xl text-ubc-mint/80 mb-10">
           We want a few smart and dedicated people to help us build all the tools for semiconductor fabritcation and build chips with them. Based on this quick interest form and your responses, we will reach out to you with the next steps. This shouldn't take more than 10 minutes.
         </p>
 
