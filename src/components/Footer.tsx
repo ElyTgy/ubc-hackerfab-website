@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
       </div>
       
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 justify-items-center sm:justify-items-start md:justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center">
           {/* Left column: Logo and info */}
-          <div className="space-y-6 hidden md:block col-span-full sm:col-span-2 md:col-span-1">
+          <div className="space-y-6 col-span-1">
             <div className="flex items-center mb-4">
               <div className="relative">
                 <CircuitIcon className="w-12 h-12 text-ubc-slate" />
@@ -41,8 +41,8 @@ const Footer: React.FC = () => {
             </p>
           </div>
           
-          {/* Middle column: Quick links */}
-          <div>
+          {/* Middle column: Quick links - Hidden on mobile */}
+          <div className="hidden md:block">
             <h3 className="text-ubc-mint text-lg font-bold mb-6 relative inline-block">
               Quick Links
               <span className="absolute bottom-0 left-0 w-full h-px bg-ubc-slate/40"></span>
