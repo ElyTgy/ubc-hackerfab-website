@@ -38,6 +38,16 @@ const Header = () => {
             >
               Teams
             </Link>
+            <Link 
+              to="/faq" 
+              className={`font-medium transition-colors ${
+                isActive('/faq') 
+                  ? 'text-white border-b-2 border-ubc-slate pb-1' 
+                  : 'text-ubc-mint hover:text-white'
+              }`}
+            >
+              FAQ
+            </Link>
             <a 
               href="https://app.youform.com/forms/mevgeqbt" 
               target="_blank" 
