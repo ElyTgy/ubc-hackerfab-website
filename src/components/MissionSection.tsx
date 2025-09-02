@@ -66,7 +66,7 @@ const MissionSection: React.FC = () => {
       <div className="absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-ubc-blue/20 blur-3xl"></div>
     </div>
   
-    <div className="relative z-10 mx-auto max-w-6xl px-6">
+    <div className="relative z-10 mx-auto max-w-6xl px-8">
       <div className="animate-on-scroll mb-30 translate-y-10 text-center opacity-0 duration-1000">
         <div className="mb-6 flex items-center justify-center">
           <div className="h-px w-12 bg-ubc-slate" />
@@ -77,7 +77,7 @@ const MissionSection: React.FC = () => {
         </div>
   
         <div className="mx-auto max-w-3xl">
-          <p className="text-base md:text-xl leading-relaxed text-ubc-mint/90">
+          <p className="text-lg md:text-xl leading-relaxed text-ubc-mint/90">
           We’re developing open-source microfabrication machines and processes to build conventionally expensive and inaccessible hardware from scratch. Our first downstream goal is to synergize with the established biotech ecosystem here in Vancouver. We aim to make it 10x cheaper to get labs access to tools like microfluidic cytometers and microelectrode arrays by using first principles manufacturing. In the long term, this would enable early-stage startups to bring life-changing biomedical solutions to market at cheaper costs. 
           </p>
         </div>

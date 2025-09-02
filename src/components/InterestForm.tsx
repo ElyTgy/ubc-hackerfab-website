@@ -11,7 +11,7 @@ import { Send } from 'lucide-react';
 
 const InterestCTA: React.FC = () => {
   return (
-    <section id="interest" className="pt-36 pb-40 px-6 bg-transparent">
+    <section id="interest" className="pt-36 pb-40 px-8 bg-transparent">
       <div className="max-w-3xl mx-auto text-center">
         {/* Title */}
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-ubc-mint">
@@ -19,7 +19,7 @@ const InterestCTA: React.FC = () => {
         </h2>
 
         {/* Short description */}
-        <p className="text-base md:text-xl text-ubc-mint/80 mb-10">
+        <p className="text-lg md:text-xl text-ubc-mint/80 mb-10">
           We want a few smart and dedicated people to help us build all the tools for semiconductor fabritcation and build chips with them. Based on this quick interest form and your responses, we will reach out to you with the next steps. This shouldn't take more than 10 minutes.
         </p>
 
