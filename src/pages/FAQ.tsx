@@ -12,23 +12,23 @@ const FAQ = () => {
   const faqData = [
     {
       question: "What is HackerFab and what do you do?",
-      answer: "HackerFab is developing open-source microfabrication machines and processes to build conventionally expensive and inaccessible hardware from scratch. We're making semiconductor fabrication tools and processes more accessible by using first principles manufacturing approaches."
+      answer: "HackerFab is developing open-source microfabrication machines and processes to build conventionally expensive and inaccessible hardware from scratch. We're making semiconductor fabrication tools and processes more accessible by using first principles manufacturing approaches. We are not alone in this, and UBC's Hackerfab is a node of CMU's hackerfab inspired by Sam Zeloof and his projects."
     },
     {
       question: "Who can join the team and what qualifications do I need?",
-      answer: "We're looking for passionate students across various disciplines including mechanical engineering, electrical engineering, physics, and software development. Since our team is small, you'll have significant control over what you work on. No specific qualifications are required - we value dedication and smart thinking over credentials."
+      answer: "We're looking for a small number of passionate students across various disciplines including mechanical engineering, electrical engineering, physics, and software development. Since our team is small, you'll have significant control over what you work on. THe work is divided into teams, which determine what specific project (i.e. tool for fabrication) you will work on. No specific qualifications are required - we value dedication and smart thinking over credentials. Because of the nature of our team, you will also end up getting hands on engineering experience, doing everything from designing the projects to actually building them out."
     },
     {
       question: "What kind of projects will I work on?",
-      answer: "You'll work on building chips from scratch using our open-source fabrication tools. This includes developing microfluidic cytometers, microelectrode arrays, and other biomedical devices. Projects span hardware development, software tools, process engineering, and research into new fabrication techniques."
+      answer: "You'll work on building chips from scratch using our open-source fabrication tools. This includes developing lithography stepper for projecting patterns of design onto silicon, tube furnace for heating up gases to +1000 degrees in order to dope silicon, reactive ion etcher. These are just a few of the projects we have active. Over time, more will be added as we move towards the goal of having a complete fabrication process with enough percision and tools to make everything from transistors to more complicated chips."
     },
     {
       question: "How does the application process work?",
-      answer: "The application process starts with our interest form, which should take about 10 minutes to complete. Based on your responses, we'll reach out with next steps. The process is designed to understand your interests, skills, and how you'd like to contribute to our mission."
+      answer: "The application process starts with our interest form, which should take about 10 minutes to complete. Based on your responses, we'll reach out with next steps. The process is designed to understand your interests, skills, and how you'd like to contribute to our mission. When we reach out, we might set up an interview or ask further questions; depends on you individual answers. We know this is a bit unconventional for a design team, but that is because hackerfab in unconventional by nature."
     },
     {
-      question: "What is your long-term vision and impact?",
-      answer: "Our goal is to make biomedical hardware development 10x cheaper, enabling early-stage startups to bring life-changing solutions to market at lower costs. We're synergizing with Vancouver's biotech ecosystem to democratize access to semiconductor fabrication tools and accelerate innovation in medical technology."
+      question: "Are there any competitions?",
+      answer: "While there are no competitions, we believe external deadlines are good pressure to help us stay on track and stay motivated. We will be participating in MERC, or the Multidisciplinary Undergraduate Research Conference at UBC every March to present our research and what we have built. There will also be internal deadlines that team members will be encouraged to follow so everyone stays motivated."
     }
   ];
 
@@ -61,7 +61,7 @@ const FAQ = () => {
                 <AccordionTrigger className="text-left text-lg font-medium text-ubc-mint hover:text-white transition-colors py-6">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-ubc-mint/90 pb-6 leading-relaxed">
+                <AccordionContent className="text-ubc-mint/90 pb-6 leading-relaxed text-lg">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

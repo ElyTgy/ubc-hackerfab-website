@@ -78,7 +78,7 @@ const MissionSection: React.FC = () => {
   
         <div className="mx-auto max-w-3xl">
           <p className="text-lg md:text-xl leading-relaxed text-ubc-mint/90">
-          We’re developing open-source microfabrication machines and processes to build conventionally expensive and inaccessible hardware from scratch. Our first downstream goal is to synergize with the established biotech ecosystem here in Vancouver. We aim to make it 10x cheaper to get labs access to tools like microfluidic cytometers and microelectrode arrays by using first principles manufacturing. In the long term, this would enable early-stage startups to bring life-changing biomedical solutions to market at cheaper costs. 
+          We are a group of UBC students uncovering the dark magic behind chip design and fabrication by making everything needed to go from silicon to transistor from the ground up. Our team is interested in not only developing the tools needed to make microscale devices, but also targeting applications with interesting opportunities to disrupt. 
           </p>
         </div>
       </div>

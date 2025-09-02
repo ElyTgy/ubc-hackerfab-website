@@ -27,7 +27,7 @@ const sponsors: Sponsor[] = [
   {
     name: "1517",
     url: "https://www.1517fund.com/",
-    logoSrc: "/images/1517.png",
+    logoSrc: "/images/1517.jpg",
   },
   // Add more sponsors here …
 ];
