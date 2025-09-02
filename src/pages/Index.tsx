@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import MissionSection from '@/components/MissionSection';
 import CapabilitiesSection from '@/components/CapabilitiesSection';
@@ -25,6 +26,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-ubc-blue">
+      <Header />
       <HeroSection />
       <MissionSection />
       <CapabilitiesSection />
