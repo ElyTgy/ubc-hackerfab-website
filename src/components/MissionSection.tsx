@@ -85,7 +85,7 @@ const MissionSection: React.FC = () => {
       {/* -------- image carousel -------- */}
       <div
         className="
-          animate-on-scroll relative mx-auto mt-16 mb-8
+          animate-on-scroll relative mx-auto mt-16 mb-8 px-4 sm:px-0
           w-full max-w-lg sm:max-w-xl lg:max-w-2xl
           translate-y-10 opacity-0 duration-1000
         "
@@ -107,29 +107,33 @@ const MissionSection: React.FC = () => {
           ))}
         </div>
   
-        {/* arrows well outside the frame — roughly ⅓ of the screen gap */}
+        {/* responsive arrows - closer on mobile, further on desktop */}
         <button
           onClick={prev}
           className="
-            absolute -left-24 md:-left-32 lg:-left-40 top-1/2 -translate-y-1/2
+            absolute -left-8 sm:-left-16 md:-left-24 lg:-left-32 xl:-left-40 
+            top-1/2 -translate-y-1/2
             flex items-center justify-center
             opacity-50 hover:opacity-100 hover:scale-110
             transition-transform duration-200 ease-in-out
+            text-ubc-mint
           "
         >
-          <ChevronLeft size={48} />
+          <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
         </button>
   
         <button
           onClick={next}
           className="
-            absolute -right-24 md:-right-32 lg:-right-40 top-1/2 -translate-y-1/2
+            absolute -right-8 sm:-right-16 md:-right-24 lg:-right-32 xl:-right-40 
+            top-1/2 -translate-y-1/2
             flex items-center justify-center
             opacity-50 hover:opacity-100 hover:scale-110
             transition-transform duration-200 ease-in-out
+            text-ubc-mint
           "
         >
-          <ChevronRight size={48} />
+          <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
         </button>
   
         {/* dot indicators */}
