@@ -24,6 +24,11 @@ const sponsors: Sponsor[] = [
     url: "https://hackerfab.ece.cmu.edu/",
     logoSrc: "/images/HF.png",
   },
+  {
+    name: "1517",
+    url: "https://www.1517fund.com/",
+    logoSrc: "/images/1517.png",
+  },
   // Add more sponsors here …
 ];
 
