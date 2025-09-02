@@ -111,7 +111,7 @@ const MissionSection: React.FC = () => {
         <button
           onClick={prev}
           className="
-            absolute -left-8 sm:-left-16 md:-left-24 lg:-left-32 xl:-left-40 
+            absolute -left-4 sm:-left-12 md:-left-20 lg:-left-28 xl:-left-36 
             top-1/2 -translate-y-1/2
             flex items-center justify-center
             opacity-50 hover:opacity-100 hover:scale-110
@@ -125,7 +125,7 @@ const MissionSection: React.FC = () => {
         <button
           onClick={next}
           className="
-            absolute -right-8 sm:-right-16 md:-right-24 lg:-right-32 xl:-right-40 
+            absolute -right-4 sm:-right-12 md:-right-20 lg:-right-28 xl:-right-36 
             top-1/2 -translate-y-1/2
             flex items-center justify-center
             opacity-50 hover:opacity-100 hover:scale-110
