@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, Zap, Code, Wrench, Users, Target } from 'lucide-react';
+import { Cpu, Zap, Code, Wrench, Users, Target, Layers, Flame, TestTube, BarChart, TrendingUp } from 'lucide-react';
 import InterestForm from '@/components/InterestForm';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
@@ -7,40 +7,46 @@ import Header from '@/components/Header';
 const Teams = () => {
   const teamRoles = [
     {
-      title: "Hardware Engineering",
-      description: "Design and develop cutting-edge hardware systems, from circuit boards to mechanical components. Work on lithography steppers, precision machinery, and electronic control systems.",
-      skills: ["Circuit Design", "PCB Layout", "Embedded Systems", "CAD Design", "Signal Processing"],
+      title: "Lithography Team",
+      description: "Building and improving the maskless UV stepper and spin coater. Work on precision motion stages, wafer chucks, enclosures, optical mounts, LED driver circuits, motor drivers, sensors, interlocks, and motion control software.",
+      skills: ["SolidWorks/Fusion 360", "3D printing/CNC machining", "Arduino/STM32 motor drivers", "KiCad for PCB design", "Python or C++ for motion control", "optics alignment basics"],
       icon: Cpu
     },
     {
-      title: "Software Engineering", 
-      description: "Build robust software solutions for hardware control, user interfaces, and system automation. Develop drivers, control algorithms, and monitoring systems.",
-      skills: ["Python", "C/C++", "MATLAB", "Linux", "Real-time Systems", "GUI Development"],
-      icon: Code
+      title: "Deposition Team", 
+      description: "Developing the RF sputtering chamber for thin-film deposition. Focus on chamber hardware, target mounts, cooling structures, vacuum sealing, RF power integration, impedance matching circuits, and monitoring electronics.",
+      skills: ["CAD for chamber design (Fusion 360, SolidWorks)", "machining/metal fabrication", "RF circuit design (Smith chart, ADS/LTSpice)", "vacuum hardware familiarity (KF/CF flanges)", "LabVIEW or Python for QCM data logging"],
+      icon: Layers
     },
     {
-      title: "Mechanical Engineering",
-      description: "Design and fabricate precision mechanical systems, structural components, and integration solutions. Focus on nanometer-level precision and stability.",
-      skills: ["Mechanical Design", "3D Modeling", "Precision Manufacturing", "Materials Science", "FEA Analysis"],
-      icon: Wrench
-    },
-    {
-      title: "Electrical Engineering",
-      description: "Develop power systems, control electronics, and sensor integration. Work on high-precision electrical systems and measurement equipment.",
-      skills: ["Power Electronics", "Control Systems", "Sensor Integration", "PCB Design", "Test Equipment"],
+      title: "Etching Team",
+      description: "Building the plasma/RIE etcher for anisotropic etching. Work on electrode and chamber design, machining fixtures, gas manifolds, RF generator/matching network, bias circuits, and safety interlocks.",
+      skills: ["COMSOL or Ansys for plasma/e-field modeling", "RF power electronics", "machining for electrode fixtures", "vacuum plumbing/valves", "microcontroller programming for pressure/gas automation"],
       icon: Zap
     },
     {
-      title: "Project Management",
-      description: "Coordinate project timelines, manage resources, and ensure successful delivery of complex engineering projects. Bridge technical teams and stakeholders.",
-      skills: ["Project Planning", "Team Coordination", "Risk Management", "Technical Communication", "Agile Methods"],
-      icon: Target
+      title: "Annealing Team",
+      description: "Constructing and operating the tube furnace for oxidation, diffusion, and thermal processing. Focus on furnace tube supports, gas inlet manifolds, insulation design, heater power electronics, and thermocouple circuits.",
+      skills: ["Thermal modeling in COMSOL/Ansys", "Arduino/PID controllers", "SolidWorks/Fusion 360 for furnace assemblies", "basic high-power electronics (SSR relays, triac control)", "MATLAB/Python for temperature logging"],
+      icon: Flame
     },
     {
-      title: "Research & Development",
-      description: "Explore new technologies, conduct feasibility studies, and prototype innovative solutions. Stay at the forefront of semiconductor manufacturing technology.",
-      skills: ["Research Methods", "Data Analysis", "Prototyping", "Technical Writing", "Literature Review"],
-      icon: Users
+      title: "Chemical Processing Team",
+      description: "Handling all wetlab chemistry and chemical safety. Work on wet processing, oxide/nitride etching (e.g. HF), metal wet etchants, cleaning steps, DIY photoresists, spin-coating formulations, and surface treatments.",
+      skills: ["Standard wetlab techniques (pipettes, fume hoods)", "basic formulation work", "experience with DIY or commercial photoresists", "familiarity with MSDS documentation"],
+      icon: TestTube
+    },
+    {
+      title: "Metrology & Testing Team",
+      description: "Creating setups for characterization of films and devices. Work on sample holders, probe stations, profilometry/QCM fixtures, wafer probing circuits, measurement electronics, and automated test rigs.",
+      skills: ["SEM/optical microscopy", "profilometry", "4-point probe electrical measurements", "Python (NumPy, matplotlib, pandas)", "MATLAB for curve fitting", "CAD for probe station fixtures", "PCB design for measurement boards"],
+      icon: BarChart
+    },
+    {
+      title: "Funding / Marketing",
+      description: "Sponsor outreach and grant applications at scale and partnering with UBC faculty for lab space. Managing all people relations in a centralized Customer Relationship Management (CRM) platform and researching potential grant opportunities.",
+      skills: ["CRM platform management", "Grant writing and research", "Media design for social platforms", "Relationship building with faculty and staff", "Sponsor outreach"],
+      icon: TrendingUp
     }
   ];
 
