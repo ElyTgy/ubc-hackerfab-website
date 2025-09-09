@@ -9,43 +9,43 @@ const Teams = () => {
     {
       title: "Lithography Team",
       description: "Building and improving the maskless UV stepper and spin coater. Work on precision motion stages, wafer chucks, enclosures, optical mounts, LED driver circuits, motor drivers, sensors, interlocks, and motion control software.",
-      skills: ["SolidWorks", "Fusion 360", "3D printing", "CNC machining", "Arduino motor drivers", "STM32 motor drivers", "KiCad for PCB design", "Python for motion control", "C++ for motion control", "optics alignment basics"],
+      skills: ["SolidWorks", "Fusion 360", "3D printing", "CNC machining", "Arduino/STM32 motor drivers", "KiCad", "Python", "C++", "optics alignment"],
       icon: Cpu
     },
     {
       title: "Deposition Team", 
       description: "Developing the RF sputtering chamber for thin-film deposition. Focus on chamber hardware, target mounts, cooling structures, vacuum sealing, RF power integration, impedance matching circuits, and monitoring electronics.",
-      skills: ["Fusion 360", "SolidWorks", "machining", "metal fabrication", "RF circuit design (Smith chart)", "ADS circuit simulation", "LTSpice simulation", "vacuum hardware familiarity (KF flanges)", "vacuum hardware familiarity (CF flanges)", "LabVIEW for QCM data logging", "Python for QCM data logging"],
+      skills: ["Fusion 360/Solidworks", "machining", "metal fabrication", "RF circuit design", "ADS circuit simulation", "LTSpice simulation", "vacuum hardware familiarity (KF/CF flanges)", "LabVIEW/Python for QCM data logging"],
       icon: Layers
     },
     {
       title: "Etching Team",
       description: "Building the plasma/RIE etcher for anisotropic etching. Work on electrode and chamber design, machining fixtures, gas manifolds, RF generator/matching network, bias circuits, and safety interlocks.",
-      skills: ["COMSOL for plasma modeling", "COMSOL for e-field modeling", "Ansys for plasma modeling", "Ansys for e-field modeling", "RF power electronics", "machining for electrode fixtures", "vacuum plumbing", "valves", "microcontroller programming for pressure automation", "microcontroller programming for gas automation"],
+      skills: ["COMSOL/Ansys for plasma/e-field modeling", "RF power electronics", "machining for electrode fixtures", "microcontroller programming"],
       icon: Zap
     },
     {
       title: "Annealing Team",
       description: "Constructing and operating the tube furnace for oxidation, diffusion, and thermal processing. Focus on furnace tube supports, gas inlet manifolds, insulation design, heater power electronics, and thermocouple circuits.",
-      skills: ["Thermal modeling in COMSOL", "Thermal modeling in Ansys", "Arduino controllers", "PID controllers", "SolidWorks for furnace assemblies", "Fusion 360 for furnace assemblies", "high-power electronics (SSR relays)", "high-power electronics (triac control)", "MATLAB for temperature logging", "Python for temperature logging"],
+      skills: ["Thermal modeling in COMSOL/Ansys", "Arduino controllers", "PID controllers", "SolidWorks/Fusion 360 for furnace assemblies", "high-power electronics", "MATLAB/Python for temperature logging"],
       icon: Flame
     },
     {
       title: "Chemical Processing Team",
       description: "Handling all wetlab chemistry and chemical safety. Work on wet processing, oxide/nitride etching (e.g. HF), metal wet etchants, cleaning steps, DIY photoresists, spin-coating formulations, and surface treatments.",
-      skills: ["Standard wetlab techniques (pipettes)", "Standard wetlab techniques (fume hoods)", "basic formulation work", "experience with DIY photoresists", "experience with commercial photoresists", "familiarity with MSDS documentation"],
+      skills: ["Standard wetlab techniques", "Standard wetlab techniques", "basic formulation work", "experience with DIY photoresists", "experience with commercial photoresists", "familiarity with MSDS documentation"],
       icon: TestTube
     },
     {
       title: "Metrology & Testing Team",
       description: "Creating setups for characterization of films and devices. Work on sample holders, probe stations, profilometry/QCM fixtures, wafer probing circuits, measurement electronics, and automated test rigs.",
-      skills: ["SEM microscopy", "optical microscopy", "profilometry", "4-point probe electrical measurements", "Python (NumPy)", "Python (matplotlib)", "Python (pandas)", "MATLAB for curve fitting", "CAD for probe station fixtures", "PCB design for measurement boards"],
+      skills: ["SEM microscopy", "optical microscopy", "profilometry", "4-point probe electrical measurements", "Python (NumPy, matplotlib,pandas)", "CAD for probe station fixtures", "PCB design for measurement boards"],
       icon: BarChart
     },
     {
       title: "Funding / Marketing",
       description: "Sponsor outreach and grant applications at scale and partnering with UBC faculty for lab space. Managing all people relations in a centralized Customer Relationship Management (CRM) platform and researching potential grant opportunities.",
-      skills: ["CRM platform management", "Grant writing and research", "Media design for social platforms", "Relationship building with faculty and staff", "Sponsor outreach"],
+      skills: ["CRM platform management", "Grant writing and research", "Media design", "Relationship building with faculty", "Sponsor outreach"],
       icon: TrendingUp
     }
   ];
