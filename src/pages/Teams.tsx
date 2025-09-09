@@ -9,7 +9,7 @@ const Teams = () => {
     {
       title: "Lithography Team",
       description: "Building and improving the maskless UV stepper and spin coater. Work on precision motion stages, wafer chucks, enclosures, optical mounts, LED driver circuits, motor drivers, sensors, interlocks, and motion control software.",
-      skills: ["SolidWorks", "Fusion 360", "3D printing", "CNC machining", "Arduino/STM32 motor drivers", "KiCad", "Python", "C++", "optics alignment"],
+      skills: ["SolidWorks/Fusion 360", "3D printing", "CNC machining", "Arduino/STM32 motor drivers", "KiCad", "Python", "C++", "optics alignment"],
       icon: Cpu
     },
     {
@@ -33,7 +33,7 @@ const Teams = () => {
     {
       title: "Chemical Processing Team",
       description: "Handling all wetlab chemistry and chemical safety. Work on wet processing, oxide/nitride etching (e.g. HF), metal wet etchants, cleaning steps, DIY photoresists, spin-coating formulations, and surface treatments.",
-      skills: ["Standard wetlab techniques", "Standard wetlab techniques", "basic formulation work", "experience with DIY photoresists", "experience with commercial photoresists", "familiarity with MSDS documentation"],
+      skills: ["Standard wetlab techniques", "basic formulation work", "experience with DIY photoresists", "experience with commercial photoresists", "familiarity with MSDS documentation"],
       icon: TestTube
     },
     {
