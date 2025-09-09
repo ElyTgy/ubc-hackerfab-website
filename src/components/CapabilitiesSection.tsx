@@ -41,21 +41,21 @@ const CapabilitiesSection: React.FC = () => {
 
   const futureCapabilities: CapabilityItem[] = [
     {
-      title: "Thin Film Microelectrodes",
+      title: "RF Sputtering Chamber (Deposition)",
       description:
-        "Making devices used for recording electrical signals of cells using simple 4‑layer polyimide and metal microelectrodes.",
+        "Using radio-frequency plasma, we can eject atoms from a solid target and deposit them onto a wafer. In this stage, we design and assemble a vacuum chamber, integrating an RF power supply, creating a sputtering head, and adding monitoring tools like a quartz crystal microbalance. It will allow us to produce thin films of metals or oxides, which are essential in microelectronics and MEMS.",
       icon: "equipment",
     },
     {
-      title: "Soft‑Litho Microfluidics",
+      title: "Plasma Etcher (Etching)",
       description:
-        "Making chips that can precisely control the flow of fluids in ≲ 20 µm‑wide channels.",
+        "This device uses ionized gases (plasma) to etch away material from a wafer. It enables anisotropic etching, which is crucial for fabricating micro and nanoscale features. We will set up a plasma chamber and integrating gas flow controls. ",
       icon: "integration",
     },
     {
-      title: "Flow Cytometry",
+      title: "Tube Furnace (Annealing)",
       description:
-        "Laser‑based detection and sorting of cells, built with our in‑house soft‑litho capabilities.",
+        "The Tube Furnace is a high-temperature thermal processing tool used for oxidation, dopant diffusion, and annealing in semiconductor fabrication. The project includes building and operating a horizontal furnace with precise temperature control, programmable heating profiles, and controlled gas environments. We will use this tool to grow oxides, activate dopants, and modify material properties through thermal cycling.",
       icon: "cyto",
     },
   ];
